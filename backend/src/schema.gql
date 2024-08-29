@@ -1,0 +1,88 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Artist {
+  """Example field (placeholder)"""
+  id: Int!
+  name: String!
+  songs: [Song!]
+}
+
+type Song {
+  id: Int!
+  spotify_id: String!
+  name: String!
+  playlists: [Playlist!]
+  artists: [Artist!]
+}
+
+type Playlist {
+  id: Int!
+
+  """playlist name"""
+  name: String!
+  spotify_id: String!
+  songs: [Song!]
+}
+
+type Query {
+  mockResolver: Playlist!
+  playlists: [Playlist!]!
+  playlist(id: Int!): Playlist!
+  songs: [Song!]!
+  song(id: Int!): Song!
+  artists: [Artist!]!
+  artist(id: Int!): Artist!
+}
+
+type Mutation {
+  createPlaylist(createPlaylistInput: CreatePlaylistInput!): Playlist!
+  updatePlaylist(updatePlaylistInput: UpdatePlaylistInput!): Playlist!
+  removePlaylist(id: Int!): Playlist!
+  addSongToPlaylist(playlistId: Int!, songId: Int!): Playlist!
+  createSong(createSongInput: CreateSongInput!): Song!
+  updateSong(updateSongInput: UpdateSongInput!): Song!
+  removeSong(id: Int!): Song!
+  createArtist(createArtistInput: CreateArtistInput!): Artist!
+  updateArtist(updateArtistInput: UpdateArtistInput!): Artist!
+  removeArtist(id: Int!): Artist!
+  addSongToArtist(artistId: Int!, songId: Int!): Artist!
+}
+
+input CreatePlaylistInput {
+  """spotify id"""
+  spotify_id: String!
+  name: String!
+}
+
+input UpdatePlaylistInput {
+  """spotify id"""
+  spotify_id: String!
+  name: String!
+  id: Int!
+}
+
+input CreateSongInput {
+  """spotify id"""
+  spotify_id: String!
+  name: String!
+}
+
+input UpdateSongInput {
+  """spotify id"""
+  spotify_id: String!
+  name: String!
+  id: Int!
+}
+
+input CreateArtistInput {
+  name: String!
+  spotify_id: String!
+}
+
+input UpdateArtistInput {
+  name: String!
+  spotify_id: String!
+  id: Int!
+}
