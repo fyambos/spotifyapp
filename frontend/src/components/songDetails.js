@@ -30,7 +30,7 @@ const SongDetails = () => {
   const artists = song.artists || [];
 
   return (
-    <div>
+    <div className="App">
       <h2>{song.name || 'Unknown Song'}</h2>
       <h3>Artists:</h3>
       <ul>
