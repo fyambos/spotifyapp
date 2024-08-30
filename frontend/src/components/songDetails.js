@@ -1,4 +1,4 @@
-// src/components/songDetails.js
+// src/components/SongDetails.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
@@ -16,7 +16,7 @@ const GET_SONG_DETAILS = gql`
   }
 `;
 
-const SongDetail = () => {
+const SongDetails = () => {
   const { id } = useParams();
   const { loading, error, data } = useQuery(GET_SONG_DETAILS, {
     variables: { id: parseInt(id, 10) },
@@ -25,19 +25,25 @@ const SongDetail = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const { song } = data;
+  // Safeguard against missing data
+  const song = data?.song || {};
+  const artists = song.artists || [];
 
   return (
     <div>
-      <h2>{song.name}</h2>
+      <h2>{song.name || 'Unknown Song'}</h2>
       <h3>Artists:</h3>
       <ul>
-        {song.artists.map(artist => (
-          <li key={artist.id}>{artist.name}</li>
-        ))}
+        {artists.length > 0 ? (
+          artists.map(artist => (
+            <li key={artist.id}>{artist.name}</li>
+          ))
+        ) : (
+          <p>No artists available</p>
+        )}
       </ul>
     </div>
   );
 };
 
-export default SongDetail;
+export default SongDetails;
