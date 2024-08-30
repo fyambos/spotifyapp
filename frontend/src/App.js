@@ -1,5 +1,6 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql } from '@apollo/client';
+import './App.css';
 
 // Define the GraphQL query to fetch playlists and their songs
 const GET_PLAYLISTS = gql`
