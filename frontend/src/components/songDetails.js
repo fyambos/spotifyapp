@@ -1,6 +1,6 @@
 // src/components/SongDetails.js
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useQuery, gql } from '@apollo/client';
 
 const GET_SONG_DETAILS = gql`
@@ -42,6 +42,7 @@ const SongDetails = () => {
           <p>No artists available</p>
         )}
       </ul>
+      <Link to="/" className="return-button">Return to Playlists</Link>
     </div>
   );
 };
