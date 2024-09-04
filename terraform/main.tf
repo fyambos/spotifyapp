@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.16"
+      version = "~> 4.2.0"
     }
   }
   required_version = ">= 1.2.0"
@@ -39,4 +39,7 @@ resource "aws_security_group" "spotifyapp_sg" {
         protocol = "-1"
         cidr_blocks = ["0.0.0.0/0"]
     }
+}
+output "app_server_public_ip" {
+  value = aws_instance.spotifyapp[*].public_ip
 }
