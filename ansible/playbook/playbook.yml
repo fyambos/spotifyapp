@@ -1,5 +1,5 @@
 ---
-    - name: Install and configure server
+    - name: Installer et configurer le server
       hosts: all
       become: true
       tasks:

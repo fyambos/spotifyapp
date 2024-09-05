@@ -25,3 +25,6 @@ Ajouter les droits 700 à launch.sh et clear.sh
 
 `sudo ./clear.sh`
 
+## Erreur Failed to load plugin schemas
+Lancer le premier launch.sh puis le deuxieme et répéter si erreurs
+

@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:3.11-slim
 RUN pip install ansible
 RUN apt-get update
 RUN apt-get install -y openssh-client
