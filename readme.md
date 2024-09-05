@@ -7,7 +7,7 @@ Docker
 ## Set up du projet
 `git clone https://github.com/fyambos/spotifyapp`
 
-Dans 'Informations d'identification de sécurité' de AWS créer une clé d'accès et l'exporter dans les variables d'environnement dans un fichier .env :
+Dans 'Informations d'identification de sécurité' de AWS créer une clé d'accès et l'exporter dans les variables d'environnement dans un fichier ./.env :
 `AWS_ACCESS_KEY_ID=[ip_de_la_cle]`
 `AWS_SECRET_ACCESS_KEY=[secret_de_la_cle]`
 
