@@ -1,0 +1,9 @@
+---
+- name : Install and configure server
+  hosts: all
+  become: true
+  tasks:
+  - name: Copy playbook.yml
+    copy:
+      src: playbook.yml
+      dest: /root/playbook.yml
