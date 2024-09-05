@@ -7,8 +7,8 @@
         - name: Clone git
           git:
             repo: 'https://github.com/fyambos/spotifyapp.git'
-            dest: /root
-            
+            dest: /root/spotifyapp
+
         - name: Installer Docker
           apt:
             name: docker.io
@@ -29,4 +29,4 @@
         - name: Lancer Docker Compose
           command: docker-compose up -d
           args:
-            chdir: /root
+            chdir: /root/spotifyapp

@@ -13,6 +13,3 @@ for ip in $ips; do
   echo "$ip ansible_user=ubuntu ansible_ssh_private_key_file=myKey.pem" >> ansible/playbook/inventory.ini
 
 done
-chmod 400 ansible/playbook/myKey.pem
-docker build -t ansible ./ansible
-docker container run -it --rm ansible ansible-playbook -i inventory.ini playbook.yml

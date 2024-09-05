@@ -13,13 +13,14 @@ Dans 'Informations d'identification de sécurité' de AWS créer une clé d'acc�
 
 Dans le tableau de bord de EC2 de AWS créer une paire de clé et l'enregistrer sous ./myKey.pem
 
-Ajouter les droits 700 à launch.sh et clear.sh
+Ajouter les droits 700 à launch.sh, launch2.sh et clear.sh
 
 `chmod 700 ./launch.sh ./clear.sh`
 
 ## Lancement
 
 `sudo ./launch.sh`
+`sudo ./launch2.sh`
 
 ## Fermeture
 
