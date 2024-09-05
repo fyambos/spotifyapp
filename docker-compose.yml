@@ -1,12 +1,12 @@
 services:
   frontend:
-    build: ./frontend
+    build: ./spotifyapp/frontend
     ports:
       - "4000:4000"
     networks:
       - mynetwork
   backend:
-    build: ./backend
+    build: ./spotifyapp/backend
     ports:
       - "3000:3000"
     networks:

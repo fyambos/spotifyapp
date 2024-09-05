@@ -6,3 +6,4 @@ terraform.tfplan
 ansible/playbook/backend/*
 ansible/playbook/frontend/*
 ansible/playbook/inventory.ini
+ansible/playbook/docker-compose.yml
