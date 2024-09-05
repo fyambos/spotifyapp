@@ -5,5 +5,5 @@
   tasks:
     - name: Copy playbook.yml
       copy:
-      src: playbook.yml
-      dest: /root/playbook.yml
+        src: playbook.yml
+        dest: /root/playbook.yml
