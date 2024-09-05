@@ -10,7 +10,8 @@ docker container run -it --rm -v $PWD/terraform:$PWD/terraform -w $PWD/terraform
 ips=$(jq -r '.app_server_public_ip.value[]' tmp/output.json)
 echo "[default]" > ansible/playbook/inventory.ini
 for ip in $ips; do
-  echo "$ip" >> ansible/playbook/inventory.ini
+  echo "$ip ansible_user=ubuntu ansible_ssh_private_key_file=myKey.pem" >> ansible/playbook/inventory.ini
+
 done
 chmod 400 ansible/playbook/myKey.pem
 docker build -t ansible ./ansible
