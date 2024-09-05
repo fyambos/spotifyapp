@@ -3,7 +3,7 @@
   hosts: all
   become: true
   tasks:
-  - name: Copy playbook.yml
-    copy:
-    src: playbook.yml
-    dest: /root/playbook.yml
+    - name: Copy playbook.yml
+      copy:
+      src: playbook.yml
+      dest: /root/playbook.yml
