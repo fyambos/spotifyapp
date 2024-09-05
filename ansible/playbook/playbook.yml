@@ -3,54 +3,35 @@
       hosts: all
       become: true
       tasks:
-        - name: Copy playbook.yml
+
+        - name: Importer le backend
           copy:
-            src: playbook.yml
-            dest: /root/playbook.yml
+            src: "./backend"
+            dest: "/root/backend"
 
-    - name: Importer le backend
-      git:
-        repo: "./backend"
-        dest: "/root/backend"
-        version: "main" 
-      notify:
-        - Backend cloned
+        - name: Importer le frontend
+          copy:
+            src: "./frontend"
+            dest: "/root/frontend"
 
-    - name: Importer le frontend
-      git:
-        repo: "./frontend"
-        dest: "/root/frontend"
-        version: "main" 
-      notify:
-        - Frontend cloned
+        - name: Installer Docker
+          apt:
+            name: docker.io
+            state: present
+            update_cache: yes
 
-    - name: Installer Docker
-      apt:
-        name: docker.io
-        state: present
-        update_cache: yes
+        - name: Installer Docker Compose
+          apt:
+            name: docker-compose
+            state: present
+            update_cache: yes
 
-    - name: Installer Docker Compose
-      apt:
-        name: docker-compose
-        state: present
-        update_cache: yes
+        - name: Copier docker-compose.yml
+          copy:
+            src: docker-compose.yml
+            dest: /root/docker-compose.yml
 
-    - name: Copier docker-compose.yml
-      copy:
-        src: docker-compose.yml
-        dest: /root/docker-compose.yml
-
-    - name: Lancer Docker Compose
-      command: docker-compose up -d
-      args:
-        chdir: /root
-
-  handlers:
-    - name: Backend cloned
-      debug:
-        msg: "Le backend a été cloné avec succès."
-
-    - name: Frontend cloned
-      debug:
-        msg: "Le frontend a été cloné avec succès."
+        - name: Lancer Docker Compose
+          command: docker-compose up -d
+          args:
+            chdir: /root

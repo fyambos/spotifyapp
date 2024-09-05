@@ -3,3 +3,6 @@
 myKey.pem
 output.json
 terraform.tfplan
+ansible/playbook/backend/*
+ansible/playbook/frontend/*
+ansible/playbook/inventory.ini
