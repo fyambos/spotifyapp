@@ -22,10 +22,12 @@ Ajouter les droits 700 à launch.sh, launch2.sh et clear.sh
 `sudo ./launch.sh`
 `sudo ./launch2.sh`
 
+> Si erreur, faites les commandes suivantes:
+`sudo docker compose -f /root/spotifyapp/docker-compose.yml up`
+`ssh -i myKey.pem ubuntu@[ip_instance]`
+
 ## Fermeture
 
 `sudo ./clear.sh`
 
-## Erreur Failed to load plugin schemas
-Lancer le premier launch.sh puis le deuxieme et répéter si erreurs
-
+# 
