@@ -24,6 +24,7 @@ Ajouter les droits 700 à launch.sh, launch2.sh et clear.sh
 
 > Si erreur, faites les commandes suivantes:
 `sudo docker compose -f /root/spotifyapp/docker-compose.yml up`
+
 `ssh -i myKey.pem ubuntu@[ip_instance]`
 
 ## Fermeture
