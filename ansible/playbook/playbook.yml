@@ -57,4 +57,4 @@
             dest: /root/spotifyapp
 
         - name: Lancer Docker Compose
-          command: docker-compose -f /root/spotifyapp/docker-compose.yml up
+          command: docker compose -f /root/spotifyapp/docker-compose.yml up
